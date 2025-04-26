@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brain Tumor MRI Prediction</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #222;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .instructions {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-left: 5px solid #4CAF50;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .instructions h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .instructions p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .upload-form {
+      text-align: center;
+    }
+
+    .file-input input[type="file"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px dashed #4CAF50;
+      border-radius: 8px;
+      background-color: #fafafa;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .file-input input[type="file"]:hover {
+      background-color: #e8f5e9;
+    }
+
+    .upload-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 20px;
+    }
+
+    .upload-btn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .upload-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Brain Tumor MRI Prediction</h1>
+
+    <div class="instructions">
+      <h3>Instructions:</h3>
+      <p>Upload a brain MRI image to detect if it shows a healthy brain or a tumor.</p>
+      <p><strong>Supported formats:</strong> JPG, JPEG, PNG</p>
+    </div>
+
+    <div class="upload-form">
+      <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="file-input">
+          <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" required />
+        </div>
+        <button type="submit" class="upload-btn">Upload and Predict</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
